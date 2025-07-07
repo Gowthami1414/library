@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+    <title>Student and Book Information</title>
+</head>
+<body>
+    <h1>Student Information</h1>
+    <form method="POST" action="/">
+        <label for="Roll_Number">Enter Roll Number:</label>
+        <input type="text" id="Roll_number" name="Roll_Number" required><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    {% if student_data %}
+        <p>Roll Number: {{ student_data.Roll_number }}</p>
+        <p>Student Name: {{ student_data.Name }}</p>
+        <p>Department: {{ student_data.Department }}</p>
+        <p>Outlook: {{ student_data.Outlook }}</p>
+
+        <h1>Book Information</h1>
+        <form method="GET" action="/">
+            <label for="Book_ID">Enter Book ID:</label>
+            <input type="number" id="bookid" name="Book_ID" required><br><br>
+            <input type="submit" value="Submit">
+        </form>
+
+        {% if book_data %}
+            <p>Book ID: {{ book_data.bookid }}</p>
+            <p>Book Name: {{ book_data.bookname }}</p>
+            <p>Author Name: {{ book_data.authorname }}</p>
+        {% endif %}
+    {% endif %}
+</body>
+</html>

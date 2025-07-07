@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Student Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color:darkgrey;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color:bisque;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            margin-top: 50px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"], input[type="email"] {
+            width: calc(100% - 16px);
+            padding: 8px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Add Book Details</h1>
+        <form method="POST" action="/add_book" id="book_form">
+            <label for="Book-id">Book Id:</label>
+            <input type="text" name="Book_Id" required><br>
+            
+            <label for="Book-name">Book Name:</label>
+            <input type="text" name="Book_name" required><br>
+
+            <label for="Author-name">Author Name:</label>
+            <input type="text" name="authorname" required><br>
+            <input type="submit" value="Add Book">
+        </form>
+    </div>
+</body>
+</html>

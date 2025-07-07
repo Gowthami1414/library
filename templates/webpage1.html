@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Data Lookup</title>
+</head>
+<body>
+    <h1 align="middle">MADANAPALLE INSTITUTE OF TECHNOLOGY & SCIENCE</h1>
+    <h1>Enter Student Roll Number:</h1>
+    <form method="post" action="/">
+        <input type="text" name="Roll_Number" required>
+        <input type="submit" value="Search">
+    </form>
+    {% if student_data %}
+        <h2>Student Details:</h2>
+        <p><strong>Roll Number:</strong> {{ student_data.Roll_number }}</p>
+        <p><strong>Name:</strong> {{ student_data.Name }}</p>
+        <p><strong>Department:</strong> {{ student_data.Department }}</p>
+        <P><strong>Outlook mail:-</strong> {{ student_data.Outlook}}</P>
+
+    {% endif %}
+</body>
+</html>

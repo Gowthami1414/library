@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Get Book Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            margin-top: 50px;
+        }
+
+        h1, h2 {
+            color: #333;
+            text-align: center;
+        }
+
+        form {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 80%;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            padding: 12px 24px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .book-details {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .submit-form {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Get Book Details</h1>
+        <form method="post" action="">
+            <input type="text" name="book_id" placeholder="Enter Book ID" required >
+            <input type="submit" value="Get">
+        </form>
+
+        <!-- Display Book Details -->
+        {% if book_data %}
+            <div class="book-details">
+                <h2>Book Details:</h2>
+                <p><strong>Book ID:</strong> {{ book_data.bookid }}</p>
+                <p><strong>Book Name:</strong> {{ book_data.bookname }}</p>
+                <p><strong>Author Name:</strong> {{ book_data.authorname }}</p>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="submit-form">
+                <h2>Submit Book Details:</h2>
+                <form method="POST" action="{{ url_for('submit_book', Roll_number=roll_number) }}">
+                    <label for="book_id">Enter Book ID to Submit:</label>
+                    <input type="text" name="book_id" required placeholder="Enter Book ID">
+                    <input type="submit" value="Submit Book" placeholder="Enter Book Id">
+                </form>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

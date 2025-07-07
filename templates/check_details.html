@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recently Entered Student Details</title>
+</head>
+<body>
+    <h1>Recently Entered Student Details</h1>
+    <table>
+        <tr>
+            <th>Roll Number</th>
+            <th>Name</th>
+            <th>Year</th>
+            <th>Department</th>
+            <th>Outlook</th>
+        </tr>
+        {% for student in recent_students %}
+        <tr>
+            <td>{{ student.Roll_number }}</td>
+            <td>{{ student.Name }}</td>
+            <td>{{ student.year }}</td>
+            <td>{{ student.Department }}</td>
+            <td>{{ student.Outlook }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/">Back to Home</a>
+</body>
+</html>

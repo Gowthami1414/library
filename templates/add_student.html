@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Student Details</title>
+    <style>
+        <!-- Your CSS styles go here -->
+        body {
+            font-family: Arial, sans-serif;
+            background-color:darkgrey;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color:white;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            margin-top: 50px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"], input[type="email"] {
+            width: calc(100% - 16px);
+            padding: 8px;
+            margin-bottom: 16px;
+            border: 2px solid teal;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><font color="black">Add Student Details</font></h1>
+        <form method="post" action="/add_student" id="my_form">
+            <label for="Roll_Number"><strong>Roll Number:</strong></label>
+            <input type="text" name="Roll_Number" required><br>
+            
+            <label for="Name"><strong>Name:</strong></label>
+            <input type="text" name="Name" required><br>
+
+            <label for="Year"><strong>Year:</strong></label>
+            <input type="text" name="Year" required><br>
+
+            <label for="Department"><strong>Department:</strong></label>
+            <input type="text" name="Department" required><br>
+
+            <label for="Outlook"><strong>Outlook Email:</strong></label>
+            <input type="email" name="Outlook" required><br>
+
+            <input type="submit" value="Add Student">
+        </form>
+    </div>
+</body>
+</html>

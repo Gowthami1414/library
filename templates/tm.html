@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Student Details</title>
+</head>
+<body>
+    <h1>Student Details</h1>
+    {% if student_data %}
+        <p>Roll Number: {{ student_data.Roll_number }}</p>
+        <p>Name: {{ student_data.Name }}</p>
+        <p>Email: {{ student_data.Email }}</p>
+        {% if student_data.photo_data %}
+            <img src="{{ student_data.photo_data }}" alt="Student Photo">
+        {% endif %}
+        {% if student_data.file_path %}
+            <p>Uploaded File: <a href="{{ student_data.file_path }}" target="_blank">Download</a></p>
+        {% endif %}
+        {% if student_data.bookid %}
+            <p>Book ID: {{ student_data.bookid }}</p>
+            <p>Book Name: {{ student_data.bookname }}</p>
+            <p>Author Name: {{ student_data.authorname }}</p>
+            <p>Due Date: {{ student_data.due_date }}</p>
+        {% else %}
+            <p>No book details available for this student.</p>
+        {% endif %}
+    {% else %}
+        <p>No data found for the provided Roll Number.</p>
+    {% endif %}
+</body>
+</html>

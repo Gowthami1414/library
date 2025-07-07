@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Get Book</title>
+</head>
+<body>
+    <h1>Get Book</h1>
+    <form method="POST" action="/getbook/{{ roll_number }}" enctype="multipart/form-data">
+        <label for="book_id">Book ID:</label>
+        <input type="text" id="book_id" name="book_id" required>
+        
+        <label for="due_date">Due Date:</label>
+        <input type="datetime-local" id="due_date" name="due_date" required>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

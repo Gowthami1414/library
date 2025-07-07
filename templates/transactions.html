@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+<head>
+    <title>Book Transactions</title>
+</head>
+<body>
+    <h2>Book Transactions</h2>
+    <ul>
+        {% for transaction in transactions %}
+        <li>
+            {{ transaction.action }} Book (ID: {{ transaction.book_id }})<br>
+            Taken Date: {{ transaction.taken_date }}<br>
+            Submitted Date: {{ transaction.submitted_date }}
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

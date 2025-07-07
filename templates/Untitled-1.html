@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            box-shadow: 0 4px 8px 0 rgba(252, 252, 252, 0.2);
+            border-radius: 10px;
+            margin-top: 20px;
+            background-size: cover;
+            background-image: url('{{ url_for('static', filename='lib3.jpg') }}'); /* Initial background image */
+            background-position: 0 0; /* Initial background position */
+            transition: opacity 0.8s ease-out, background-position 0.8s ease-out;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+        
+    </style>
+</head>
+<body>    
+    <div class="container">
+        <h1>Login</h1>
+        <form method="post" action="/">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br>
+            <button type="submit">Login</button>
+        </form>
+        <p>Forgot your password? <a href="{{ url_for('forgotpassword') }}">Reset it here</a>.</p>
+    </div>
+    <script>
+        var images = ["{{ url_for('static', filename='img1.jpg') }}", "{{ url_for('static', filename='img1.jpg') }}","{{ url_for('static', filename='img1.jpg') }}"];
+        var currentImage = 0;
+
+        function changeBackground() {
+            document.body.style.backgroundImage = 'url(' + images[currentImage] + ')';
+            document.body.style.backgroundPosition = currentImage * 100 + '% 0';
+            currentImage = (currentImage + 1) % images.length;
+        }
+
+        // Change background every 6 seconds (3 seconds transition + 3 seconds display)
+        setInterval(changeBackground, 3000);
+    </script>
+
+</body>
+</html>

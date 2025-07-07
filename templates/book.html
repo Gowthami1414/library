@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Information</title>
+</head>
+<body>
+    <h1>Book Information</h1>
+    
+    <form method="post" action="/book">
+        <label for="Book_ID">Enter Book ID:</label>
+        <input type="number" id="bookid" name="Book_ID" required><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    {% if book_data %}
+        <p><strong>Book ID:</strong> {{ book_data.bookid }}</p>
+        <p><strong>Book Name:</strong> {{ book_data.bookname }}</p>
+        <p><strong>Author Name:</strong> {{ book_data.authorname }}</p>
+    {% endif %}
+    <form method="post" action="/">
+        <input type="hidden" name="roll_number" value="{{ student_data.Roll_number }}">
+        <input type="submit" name="send_email" value="Send Email">
+    </form>
+    <p><a href="/">Back to Student Information</a></p>
+</body>
+</html>
